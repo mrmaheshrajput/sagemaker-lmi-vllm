@@ -1,0 +1,12 @@
+[flake8]
+exclude =
+    .git,
+    __pycache__,
+    docs/source/conf.py,
+    old,
+    build,
+    dist
+max-complexity = 10
+docstring-convention = numpy
+ignore = D100, E402, E203, W503, BLK100
+max-line-length = 100

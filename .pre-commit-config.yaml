@@ -1,0 +1,49 @@
+repos:
+
+- repo: https://github.com/asottile/pyupgrade
+  rev: v3.15.2
+  hooks:
+    - id: pyupgrade
+      name: pyupgrade
+      args: [ "--py37-plus" ]
+
+- repo: https://github.com/asottile/blacken-docs
+  rev: 1.16.0
+  hooks:
+    - id: blacken-docs
+      name: blacken-docs
+      additional_dependencies: [black==24.4.2]
+
+- repo: https://github.com/executablebooks/mdformat
+  rev: 0.7.17
+  hooks:
+    - id: mdformat
+
+- repo: https://github.com/nbQA-dev/nbQA
+  rev: 1.8.5
+  hooks:
+    - id: nbqa-pyupgrade
+      files: '^.*\.ipynb'
+      additional_dependencies: [ pyupgrade==v3.15.2 ]
+      args: [--py36-plus]
+    - id: nbqa-black
+      files: '^.*\.ipynb'
+      additional_dependencies: [ black==24.4.2 ]
+    - id: nbqa-isort
+      files: '^.*\.ipynb'
+      additional_dependencies: [ isort==5.13.2 ]
+      args: [ --profile=black ]
+    - id: nbqa-flake8
+      files: '^.*\.ipynb'
+      additional_dependencies: [ flake8-black==0.3.6, flake8-fixme==1.1.1, flake8==7.0.0 ]
+      args: [ --config=.flake8 ]
+    - id: nbqa
+      name: nbqa-blacken-docs
+      files: '^.*\.ipynb'
+      additional_dependencies: [ blacken-docs==v1.16.0, black==24.4.2 ]
+      args: [ blacken-docs ]
+    - id: nbqa
+      name: nbqa-mdformat
+      files: '^.*\.ipynb'
+      additional_dependencies: [ mdformat==0.7.17 ]
+      args: [ mdformat, --nbqa-md ]
