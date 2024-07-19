@@ -1,6 +1,6 @@
 # Deploy LLM with vLLM on SageMaker in 13 lines
 
-This repository contains the code for the Medium article titled [Deploy LLM with vLLM on SageMaker in 13 only lines of code]([https://mrmaheshrajput.medium.com](https://mrmaheshrajput.medium.com/deploy-llm-with-vllm-on-sagemaker-in-only-13-lines-of-code-1601f780c0cf)).
+This repository contains the code for the Medium article titled [Deploy LLM with vLLM on SageMaker in only 13 lines of code](https://mrmaheshrajput.medium.com/deploy-llm-with-vllm-on-sagemaker-in-only-13-lines-of-code-1601f780c0cf).
 
 ![Demo](assets/img/streaming_output.gif)
 
